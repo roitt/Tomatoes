@@ -14,6 +14,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     var movies : [NSDictionary]?
     
     var refreshControl: UIRefreshControl!
+    var networkErrorView : UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,8 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
         tableView.insertSubview(refreshControl, atIndex: 0)
+        
+        prepareErrorView()
         
         makeRottenTomatoesApiCall(false)
         
@@ -42,12 +45,43 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                 SVProgressHUD.dismiss()
             }
             
+            if error != nil {
+                self.showError()
+                return
+            } else {
+                self.hideError()
+            }
+            
             let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary
             if let json = json {
                 self.movies = json["movies"] as? [NSDictionary]
                 self.tableView.reloadData()
             }
             println("Called")
+        }
+    }
+    
+    private func prepareErrorView() {
+        networkErrorView = UIView(frame: CGRect(x:0, y:0, width:tableView.frame.width, height:30))
+        networkErrorView.backgroundColor = UIColor.grayColor()
+        networkErrorView.alpha = 0.9
+        
+        var label = UILabel(frame: networkErrorView.frame)
+        label.text = "Network Error. Please pull to refresh."
+        label.textAlignment = NSTextAlignment.Center
+        label.font = UIFont(name: label.font.fontName, size: 14)
+        
+        label.textColor = UIColor.whiteColor()
+        self.networkErrorView.addSubview(label)
+    }
+    
+    private func showError() {
+        self.tableView.addSubview(networkErrorView)
+    }
+    
+    private func hideError() {
+        if networkErrorView.superview != nil {
+            networkErrorView.removeFromSuperview()
         }
     }
     

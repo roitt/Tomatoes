@@ -21,7 +21,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary
             if let json = json {
-                self.movies = json["movies"] as! [NSDictionary]
+                self.movies = json["movies"] as? [NSDictionary]
                 self.tableView.reloadData()
             }
             println(json)
@@ -46,24 +46,29 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! MovieCell
         
         let movie = movies![indexPath.row]
         
-        cell.textLabel?.text = movie["title"] as? String
+        cell.titleLabel.text = movie["title"] as? String
+        cell.synopsisLabel.text = movie["synopsis"] as? String
+        
+        let url = NSURL(string: movie.valueForKeyPath("posters.thumbnail") as! String)!
+        cell.posterView.setImageWithURL(url)
         
         return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-    */
+    
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPathForCell(cell)!
+        let movie = movies![indexPath.row]
+        let movieDetailsViewController = segue.destinationViewController as! MovieDetailsViewController
+        movieDetailsViewController.movie = movie
+    }
 }

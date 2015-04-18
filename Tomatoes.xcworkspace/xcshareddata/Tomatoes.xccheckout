@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>1707374E-7BE7-42AC-9A95-471633AC6995</string>
+	<string>643FE089-04F2-40F3-99E8-27874BF00A60</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Tomatoes</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/roitt/Tomatoes.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Tomatoes.xcodeproj</string>
+	<string>Tomatoes.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5C96390C8301185F5596CBAA7CBAED148F8A8A04</key>
-		<string>../..</string>
+		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/roitt/Tomatoes.git</string>

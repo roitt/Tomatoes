@@ -13,26 +13,46 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     var movies : [NSDictionary]?
     
+    var refreshControl: UIRefreshControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear)
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.insertSubview(refreshControl, atIndex: 0)
         
+        makeRottenTomatoesApiCall(false)
+        
+        SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear)
+
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+    }
+    
+    func makeRottenTomatoesApiCall(isRefreshing: Bool) {
         let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=20&country=US")!
         let request = NSURLRequest(URL: url)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            SVProgressHUD.dismiss()
+            
+            if isRefreshing {
+                self.refreshControl.endRefreshing()
+            } else {
+                SVProgressHUD.dismiss()
+            }
+            
             let json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary
             if let json = json {
                 self.movies = json["movies"] as? [NSDictionary]
                 self.tableView.reloadData()
             }
-            println(json)
+            println("Called")
         }
-
-        tableView.dataSource = self
-        tableView.delegate = self
-        
+    }
+    
+    func onRefresh() {
+        makeRottenTomatoesApiCall(true)
     }
 
     override func didReceiveMemoryWarning() {

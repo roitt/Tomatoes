@@ -10,11 +10,16 @@ import UIKit
 
 class MoviesViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let urlString = "";
         
+        let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=20&country=US")!
+        let request = NSURLRequest(URL: url)
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+            let json: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil)
+            println(json)
+        }
         // Make an async call here.
         
     }

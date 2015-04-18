@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1BAF30AB1ADDEC6100756359 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF30AA1ADDEC6100756359 /* AppDelegate.swift */; };
-		1BAF30AD1ADDEC6100756359 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF30AC1ADDEC6100756359 /* ViewController.swift */; };
 		1BAF30B01ADDEC6100756359 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BAF30AE1ADDEC6100756359 /* Main.storyboard */; };
 		1BAF30B21ADDEC6100756359 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BAF30B11ADDEC6100756359 /* Images.xcassets */; };
 		1BAF30B51ADDEC6100756359 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BAF30B31ADDEC6100756359 /* LaunchScreen.xib */; };
@@ -30,7 +29,6 @@
 		1BAF30A51ADDEC6100756359 /* Tomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BAF30A91ADDEC6100756359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BAF30AA1ADDEC6100756359 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1BAF30AC1ADDEC6100756359 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1BAF30AF1ADDEC6100756359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1BAF30B11ADDEC6100756359 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1BAF30B41ADDEC6100756359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				1BAF30AA1ADDEC6100756359 /* AppDelegate.swift */,
-				1BAF30AC1ADDEC6100756359 /* ViewController.swift */,
 				1BAF30CA1ADDEE6E00756359 /* MoviesViewController.swift */,
 				1BAF30AE1ADDEC6100756359 /* Main.storyboard */,
 				1BAF30B11ADDEC6100756359 /* Images.xcassets */,
@@ -215,7 +212,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BAF30AD1ADDEC6100756359 /* ViewController.swift in Sources */,
 				1BAF30AB1ADDEC6100756359 /* AppDelegate.swift in Sources */,
 				1BAF30CB1ADDEE6E00756359 /* MoviesViewController.swift in Sources */,
 			);
@@ -413,6 +409,7 @@
 				1BAF30C61ADDEC6100756359 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1BAF30C71ADDEC6100756359 /* Build configuration list for PBXNativeTarget "TomatoesTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +418,7 @@
 				1BAF30C91ADDEC6100756359 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

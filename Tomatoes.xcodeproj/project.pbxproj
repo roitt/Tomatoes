@@ -19,6 +19,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1B49F5AA1AE211D200FBC701 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B49F5A51AE211D200FBC701 /* PKHUD.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F99631FC19514FAC001F73CA;
+			remoteInfo = "PKHUD Demo";
+		};
+		1B49F5AC1AE211D200FBC701 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B49F5A51AE211D200FBC701 /* PKHUD.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F996321E19514FD8001F73CA;
+			remoteInfo = PKHUD;
+		};
 		1BAF30BB1ADDEC6100756359 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1BAF309D1ADDEC6100756359 /* Project object */;
@@ -32,6 +46,8 @@
 		0FE1CFD90BE366D6BE97DE89 /* Pods-Tomatoes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tomatoes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tomatoes/Pods-Tomatoes.debug.xcconfig"; sourceTree = "<group>"; };
 		1B49F59E1AE2025E00FBC701 /* Tomatoes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tomatoes-Bridging-Header.h"; sourceTree = "<group>"; };
 		1B49F5A11AE2045A00FBC701 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
+		1B49F5A31AE210E900FBC701 /* PKHUD */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PKHUD; path = ../PKHUD/PKHUD; sourceTree = "<group>"; };
+		1B49F5A51AE211D200FBC701 /* PKHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PKHUD.xcodeproj; path = ../PKHUD/PKHUD.xcodeproj; sourceTree = "<group>"; };
 		1BA848451AE1FA030088801A /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		1BAF30A51ADDEC6100756359 /* Tomatoes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tomatoes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BAF30A91ADDEC6100756359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,9 +85,20 @@
 		17A7D70F978BDE9A9AD72A1D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1B49F5A51AE211D200FBC701 /* PKHUD.xcodeproj */,
+				1B49F5A31AE210E900FBC701 /* PKHUD */,
 				CE55EABB4393A0A845CD4081 /* libPods-Tomatoes.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B49F5A61AE211D200FBC701 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B49F5AB1AE211D200FBC701 /* PKHUD Demo.app */,
+				1B49F5AD1AE211D200FBC701 /* PKHUD.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		1BA848431AE1F9CB0088801A /* View Controllers */ = {
@@ -229,6 +256,12 @@
 			mainGroup = 1BAF309C1ADDEC6100756359;
 			productRefGroup = 1BAF30A61ADDEC6100756359 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1B49F5A61AE211D200FBC701 /* Products */;
+					ProjectRef = 1B49F5A51AE211D200FBC701 /* PKHUD.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1BAF30A41ADDEC6100756359 /* Tomatoes */,
@@ -236,6 +269,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1B49F5AB1AE211D200FBC701 /* PKHUD Demo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "PKHUD Demo.app";
+			remoteRef = 1B49F5AA1AE211D200FBC701 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1B49F5AD1AE211D200FBC701 /* PKHUD.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PKHUD.framework;
+			remoteRef = 1B49F5AC1AE211D200FBC701 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1BAF30A31ADDEC6100756359 /* Resources */ = {

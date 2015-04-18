@@ -18,6 +18,12 @@ class MovieDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Customize back button
+        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController!.navigationBar.titleTextAttributes = titleDict as [NSObject : AnyObject]
+
 
         // Load low-res image immediately
         var urlString = movie.valueForKeyPath("posters.thumbnail") as? String

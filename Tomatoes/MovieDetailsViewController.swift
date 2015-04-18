@@ -19,18 +19,20 @@ class MovieDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Load low-res image immediately
+        var urlString = movie.valueForKeyPath("posters.thumbnail") as? String
+        detailPosterView.setImageWithURL(NSURL(string: urlString!))
+        
+        // Set text labels
         titleLabel.text = movie["title"] as? String
         synopsisLabel.text = movie["synopsis"] as? String
 
-        var urlString = movie.valueForKeyPath("posters.thumbnail") as? String
+        // Now load high-res
         var range = urlString!.rangeOfString(".*cloudfront.net/", options: .RegularExpressionSearch)
         if let range = range {
             urlString = urlString!.stringByReplacingCharactersInRange(range, withString: "https://content6.flixster.com/")
         }
-        
         let url = NSURL(string: urlString!)
-        
         detailPosterView.setImageWithURL(url)
     }
 

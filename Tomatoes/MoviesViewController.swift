@@ -34,6 +34,10 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        tabBarController?.tabBar.hidden = false
+    }
+    
     func makeRottenTomatoesApiCall(isRefreshing: Bool) {
         let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=20&country=US")!
         let request = NSURLRequest(URL: url)

@@ -15,6 +15,9 @@
 		1BAF30B51ADDEC6100756359 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BAF30B31ADDEC6100756359 /* LaunchScreen.xib */; };
 		1BAF30C11ADDEC6100756359 /* TomatoesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF30C01ADDEC6100756359 /* TomatoesTests.swift */; };
 		1BAF30CB1ADDEE6E00756359 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF30CA1ADDEE6E00756359 /* MoviesViewController.swift */; };
+		1BC30DC01AE4ECD800FB5D12 /* movies.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC30DBF1AE4ECD800FB5D12 /* movies.png */; };
+		1BC30DC21AE4EE1400FB5D12 /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC30DC11AE4EE1400FB5D12 /* TabsViewController.swift */; };
+		1BC30DC41AE4EFA000FB5D12 /* dvd.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC30DC31AE4EFA000FB5D12 /* dvd.png */; };
 		CB28A9272A08E913362B6410 /* libPods-Tomatoes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE55EABB4393A0A845CD4081 /* libPods-Tomatoes.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +62,9 @@
 		1BAF30BF1ADDEC6100756359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BAF30C01ADDEC6100756359 /* TomatoesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TomatoesTests.swift; sourceTree = "<group>"; };
 		1BAF30CA1ADDEE6E00756359 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		1BC30DBF1AE4ECD800FB5D12 /* movies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movies.png; sourceTree = "<group>"; };
+		1BC30DC11AE4EE1400FB5D12 /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
+		1BC30DC31AE4EFA000FB5D12 /* dvd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dvd.png; sourceTree = "<group>"; };
 		A3EBF33B66D917018EF44F5A /* Pods-Tomatoes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tomatoes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tomatoes/Pods-Tomatoes.release.xcconfig"; sourceTree = "<group>"; };
 		CE55EABB4393A0A845CD4081 /* libPods-Tomatoes.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tomatoes.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,6 +98,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1B47E7AB1AE4E2F9007D13B4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1BC30DC31AE4EFA000FB5D12 /* dvd.png */,
+				1BC30DBF1AE4ECD800FB5D12 /* movies.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		1B49F5A61AE211D200FBC701 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +121,7 @@
 			children = (
 				1BAF30CA1ADDEE6E00756359 /* MoviesViewController.swift */,
 				1B49F5A11AE2045A00FBC701 /* MovieDetailsViewController.swift */,
+				1BC30DC11AE4EE1400FB5D12 /* TabsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -141,6 +157,7 @@
 		1BAF30A71ADDEC6100756359 /* Tomatoes */ = {
 			isa = PBXGroup;
 			children = (
+				1B47E7AB1AE4E2F9007D13B4 /* Images */,
 				1BA848441AE1F9DA0088801A /* Views */,
 				1BA848431AE1F9CB0088801A /* View Controllers */,
 				1BAF30AA1ADDEC6100756359 /* AppDelegate.swift */,
@@ -292,7 +309,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BC30DC41AE4EFA000FB5D12 /* dvd.png in Resources */,
 				1BAF30B01ADDEC6100756359 /* Main.storyboard in Resources */,
+				1BC30DC01AE4ECD800FB5D12 /* movies.png in Resources */,
 				1BAF30B51ADDEC6100756359 /* LaunchScreen.xib in Resources */,
 				1BAF30B21ADDEC6100756359 /* Images.xcassets in Resources */,
 			);
@@ -348,6 +367,7 @@
 				1B49F5A21AE2045A00FBC701 /* MovieDetailsViewController.swift in Sources */,
 				1BAF30AB1ADDEC6100756359 /* AppDelegate.swift in Sources */,
 				1BAF30CB1ADDEE6E00756359 /* MoviesViewController.swift in Sources */,
+				1BC30DC21AE4EE1400FB5D12 /* TabsViewController.swift in Sources */,
 				1BA848461AE1FA030088801A /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

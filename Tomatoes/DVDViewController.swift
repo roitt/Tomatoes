@@ -1,5 +1,5 @@
 //
-//  TabsViewController.swift
+//  DVDViewController.swift
 //  Tomatoes
 //
 //  Created by Rohit Bhoompally on 4/20/15.
@@ -8,19 +8,19 @@
 
 import UIKit
 
-class TabsViewController: UITabBarController {
+class DVDViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.tabBar.tintColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }    
+    }
+    
 
     /*
     // MARK: - Navigation

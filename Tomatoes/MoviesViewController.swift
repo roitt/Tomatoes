@@ -16,6 +16,8 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     var refreshControl: UIRefreshControl!
     var networkErrorView : UIView!
     
+    var isMoviesScene: Bool = true;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,8 +26,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.insertSubview(refreshControl, atIndex: 0)
         
         prepareErrorView()
-        
-        makeRottenTomatoesApiCall(false)
         
         SVProgressHUD.showWithMaskType(SVProgressHUDMaskType.Clear)
 
@@ -36,10 +36,26 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidAppear(animated: Bool) {
         tabBarController?.tabBar.hidden = false
+        var selectedIndex = tabBarController?.selectedIndex
+        isMoviesScene = isMoviesSelected(selectedIndex!)
+        makeRottenTomatoesApiCall(isMoviesScene, isRefreshing: false)
     }
     
-    func makeRottenTomatoesApiCall(isRefreshing: Bool) {
-        let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=20&country=US")!
+    func isMoviesSelected(selectedIndex: Int) -> Bool {
+        if selectedIndex == 0 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func makeRottenTomatoesApiCall(isMoviesScene: Bool, isRefreshing: Bool) {
+        var url: NSURL
+        if isMoviesScene {
+            url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=20&country=US")!
+        } else {
+            url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=20&country=US")!
+        }
         let request = NSURLRequest(URL: url)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             
@@ -90,7 +106,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func onRefresh() {
-        makeRottenTomatoesApiCall(true)
+        makeRottenTomatoesApiCall(self.isMoviesScene, isRefreshing: true)
     }
 
     override func didReceiveMemoryWarning() {

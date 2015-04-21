@@ -110,22 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nUO-6M-2Gp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="846" y="-122"/>
-        </scene>
-        <!--DVD-->
-        <scene sceneID="bJU-TL-IDS">
-            <objects>
-                <viewController id="zSe-3a-f05" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lRW-uy-3c9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="DVD" id="aYy-Iw-qVs"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P5f-WL-Kad" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="189" y="608"/>
+            <point key="canvasLocation" x="1030" y="230"/>
         </scene>
         <!--Tabs View Controller-->
         <scene sceneID="T43-LU-5FF">
@@ -188,12 +173,73 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="zSe-3a-f05" kind="relationship" relationship="rootViewController" id="LIw-6I-U1M"/>
+                        <segue destination="xCJ-Cb-u5u" kind="relationship" relationship="rootViewController" id="Wif-UH-FAf"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RZr-cx-pef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-343" y="608"/>
+        </scene>
+        <!--Box Office-->
+        <scene sceneID="6SK-XY-ahr">
+            <objects>
+                <viewController id="xCJ-Cb-u5u" customClass="MoviesViewController" customModule="Tomatoes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K85-2K-gBd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="119" sectionHeaderHeight="22" sectionFooterHeight="22" id="UQD-bG-xim">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="119" id="Z36-cv-St6" customClass="MovieCell" customModule="Tomatoes" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="119"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z36-cv-St6" id="ySl-PQ-k8q">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="118"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wBL-uy-SGh">
+                                                    <rect key="frame" x="88" y="8" width="218" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="KO8-6Y-oAf">
+                                                    <rect key="frame" x="8" y="8" width="72" height="102"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aae-yt-Qer">
+                                                    <rect key="frame" x="88" y="37" width="218" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="posterView" destination="KO8-6Y-oAf" id="Ky7-4h-xGg"/>
+                                            <outlet property="synopsisLabel" destination="aae-yt-Qer" id="mJl-Ne-6xm"/>
+                                            <outlet property="titleLabel" destination="wBL-uy-SGh" id="SSl-sJ-oUH"/>
+                                            <segue destination="Bnb-Ho-de4" kind="push" id="7Y8-jk-Qck"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Box Office" id="DOv-JX-Gjt"/>
+                    <connections>
+                        <outlet property="tableView" destination="UQD-bG-xim" id="GKO-Lb-03o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FiL-5U-dlj" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="289" y="608"/>
         </scene>
     </scenes>
     <resources>
@@ -205,4 +251,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="7Y8-jk-Qck"/>
+    </inferredMetricsTieBreakers>
 </document>

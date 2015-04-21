@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0F3D0F1AE5F2CB0069A31D /* TabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0F3D0E1AE5F2CB0069A31D /* TabsViewController.swift */; };
 		1B49F5A21AE2045A00FBC701 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B49F5A11AE2045A00FBC701 /* MovieDetailsViewController.swift */; };
 		1BA848461AE1FA030088801A /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA848451AE1FA030088801A /* MovieCell.swift */; };
 		1BAF30AB1ADDEC6100756359 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BAF30AA1ADDEC6100756359 /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		0FE1CFD90BE366D6BE97DE89 /* Pods-Tomatoes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tomatoes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tomatoes/Pods-Tomatoes.debug.xcconfig"; sourceTree = "<group>"; };
+		1B0F3D0E1AE5F2CB0069A31D /* TabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabsViewController.swift; sourceTree = "<group>"; };
 		1B49F59E1AE2025E00FBC701 /* Tomatoes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tomatoes-Bridging-Header.h"; sourceTree = "<group>"; };
 		1B49F5A11AE2045A00FBC701 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		1B49F5A31AE210E900FBC701 /* PKHUD */ = {isa = PBXFileReference; lastKnownFileType = folder; name = PKHUD; path = ../PKHUD/PKHUD; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				1BAF30CA1ADDEE6E00756359 /* MoviesViewController.swift */,
 				1B49F5A11AE2045A00FBC701 /* MovieDetailsViewController.swift */,
 				1BC30DC51AE4F6A000FB5D12 /* DVDViewController.swift */,
+				1B0F3D0E1AE5F2CB0069A31D /* TabsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 			files = (
 				1B49F5A21AE2045A00FBC701 /* MovieDetailsViewController.swift in Sources */,
 				1BAF30AB1ADDEC6100756359 /* AppDelegate.swift in Sources */,
+				1B0F3D0F1AE5F2CB0069A31D /* TabsViewController.swift in Sources */,
 				1BAF30CB1ADDEE6E00756359 /* MoviesViewController.swift in Sources */,
 				1BA848461AE1FA030088801A /* MovieCell.swift in Sources */,
 				1BC30DC61AE4F6A000FB5D12 /* DVDViewController.swift in Sources */,

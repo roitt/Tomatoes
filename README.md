@@ -22,14 +22,15 @@ Time spent: `5 Hours`
 - [ ] Customize the highlight and selection effect of the cell.
 - [x] Customize the navigation bar.
 - [x] Add a tab bar for Box Office and DVD.
-- [ ] Add a search bar: pretty simple implementation of searching against the existing table view data.
+- [x] Add a search bar: pretty simple implementation of searching against the existing table view data.
 
 ### Walkthrough
-![Video Walkthrough](http://i.imgur.com/9d4fXIm.gif)
+![Video Walkthrough](rotten-tomatoes.gif)
 
 Credits
 ---------
 * [Rotten Tomatoes API](http://developer.rottentomatoes.com/docs/read/JSON)
 * [AFNetworking](https://github.com/AFNetworking/AFNetworking)
+* [SVProgressHud](https://github.com/TransitApp/SVProgressHUD)
 * [Movies Icon] Created by Andrew Rockefeller from the Noun Project
 * [DVD Icon] Created by Creative Stall from the Noun Project

@@ -34,6 +34,7 @@ class MovieDetailsViewController: UIViewController {
         // Set text labels
         titleLabel.text = movie["title"] as? String
         synopsisLabel.text = movie["synopsis"] as? String
+        synopsisLabel.sizeToFit()
 
         // Now load high-res
         var range = urlString!.rangeOfString(".*cloudfront.net/", options: .RegularExpressionSearch)

@@ -16,9 +16,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="rtD-yl-DhD">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="119" id="0rD-nW-tVh" customClass="MovieCell" customModule="Tomatoes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="119"/>
+                                        <rect key="frame" x="0.0" y="130" width="320" height="119"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0rD-nW-tVh" id="8vu-Ni-AzQ">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="118"/>
@@ -58,6 +63,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Box Office" id="Nsz-8z-fNf"/>
                     <connections>
+                        <outlet property="searchBarBO" destination="rtD-yl-DhD" id="Zd1-su-6ed"/>
                         <outlet property="tableView" destination="3f2-tO-NEi" id="wpM-Wq-Vcl"/>
                     </connections>
                 </viewController>
@@ -132,7 +138,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPS-Io-0Ph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-935" y="258"/>
+            <point key="canvasLocation" x="-928" y="157"/>
         </scene>
         <!--Box Office-->
         <scene sceneID="KQS-nT-2A5">
@@ -192,9 +198,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="YoA-Vn-GYy">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="119" id="Z36-cv-St6" customClass="MovieCell" customModule="Tomatoes" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="119"/>
+                                        <rect key="frame" x="0.0" y="130" width="320" height="119"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z36-cv-St6" id="ySl-PQ-k8q">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="118"/>
@@ -234,6 +245,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Box Office" id="DOv-JX-Gjt"/>
                     <connections>
+                        <outlet property="searchBarBO" destination="YoA-Vn-GYy" id="XYq-Ey-qpO"/>
                         <outlet property="tableView" destination="UQD-bG-xim" id="GKO-Lb-03o"/>
                     </connections>
                 </viewController>

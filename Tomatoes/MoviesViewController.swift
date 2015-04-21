@@ -8,10 +8,14 @@
 
 import UIKit
 
-class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
+    @IBOutlet weak var searchBarBO: UISearchBar!
+    var searchActive : Bool = false
+    
     @IBOutlet weak var tableView: UITableView!
     var movies : [NSDictionary]?
+    var filteredResults: [NSDictionary]?
     
     var refreshControl: UIRefreshControl!
     var networkErrorView : UIView!
@@ -31,7 +35,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
 
         tableView.dataSource = self
         tableView.delegate = self
-        
+        searchBarBO.delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -115,6 +119,10 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(searchActive) {
+            return filteredResults!.count
+        }
+        
         if let movies = movies {
             return movies.count
         } else {
@@ -124,13 +132,17 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! MovieCell
+        var cellMovie: NSDictionary
+        if(searchActive){
+            cellMovie = filteredResults![indexPath.row]
+        } else {
+            cellMovie = movies![indexPath.row]
+        }
         
-        let movie = movies![indexPath.row]
+        cell.titleLabel.text = cellMovie["title"] as? String
+        cell.synopsisLabel.text = cellMovie["synopsis"] as? String
         
-        cell.titleLabel.text = movie["title"] as? String
-        cell.synopsisLabel.text = movie["synopsis"] as? String
-        
-        let url = NSURL(string: movie.valueForKeyPath("posters.thumbnail") as! String)!
+        let url = NSURL(string: cellMovie.valueForKeyPath("posters.thumbnail") as! String)!
         var urlRequest: NSMutableURLRequest = NSMutableURLRequest(URL: url)
        
         cell.posterView.setImageWithURLRequest(urlRequest, placeholderImage: nil, success: { (request:NSURLRequest!, response:NSHTTPURLResponse!, image:UIImage!) -> Void in
@@ -154,7 +166,43 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true;
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
 
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            searchActive = false
+            return
+        }
+
+        filteredResults = movies!.filter({ (movie) -> Bool in
+            let tmp: NSString = movie["title"] as! NSString
+            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            return range.location != NSNotFound
+        })
+        
+        if(filteredResults!.count == 0){
+            searchActive = false;
+        } else {
+            searchActive = true;
+        }
+        
+        self.tableView.reloadData()
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPathForCell(cell)!

@@ -56,9 +56,9 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     func makeRottenTomatoesApiCall(isMoviesScene: Bool, isRefreshing: Bool) {
         var url: NSURL
         if isMoviesScene {
-            url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=66kvtkpp29d537y25ujdswgy&limit=20&country=US")!
+            url = NSURL(string: "https://gist.githubusercontent.com/timothy1ee/d1778ca5b944ed974db0/raw/489d812c7ceeec0ac15ab77bf7c47849f2d1eb2b/gistfile1.json")!
         } else {
-            url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=66kvtkpp29d537y25ujdswgy&limit=20&country=US")!
+            url = NSURL(string: "https://gist.githubusercontent.com/timothy1ee/e41513a57049e21bc6cf/raw/b490e79be2d21818f28614ec933d5d8f467f0a66/gistfile1.json")!
         }
         let request = NSURLRequest(URL: url)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
